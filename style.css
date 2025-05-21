@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+@keyframes aparecer2{
+    from{
+        opacity: 0;
+        transform: translateX(560px);
+    }
+    to{
+        opacity:1;
+        transform: translateX(0);
+    }
+}
+@keyframes aparecer3{
+    from{
+        opacity: 0;
+        transform: scale(0.4);
+    }
+    to{
+        opacity:1;
+        transform: scale(1);
+    }
+}
+.nav_barr{
+    position: relative;
+    height: 5em;
+    width: 100%;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    align-items: center;
+    z-index: 100;
+    animation: aparecer 0.6s ease-out forwards;
+}
+
+.nav_blue{
+    height: 1.9em;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(90deg,#0066ff,#50daff);
+    animation: aparecer2 0.4s ease-out forwards;
+}
+.nav_bg{
+    height: 1.9em;
+    width: 100%;
+    z-index: 2;
+    background-color:#0066ff49;
+    animation: aparecer2 0.2s ease-out forwards;
+}
+.nav_izq{
+    display: flex;
+    width: 100%;
+}
+.nav_der{
+    text-align: right;
+    width: 100%;
+}
+.nav_izq>a{
+    padding-left: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+}
+.nav_der>a{
+    padding-right: 1em;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #0066ff;
+}
+.titulo_subtitulo{
+    align-items: center;
+    justify-items: center;
+    padding: 4em 4em 4em 4em;
+}
+.apartado{
+    display: flex 1;
+    height: 100%;
+}
+.titulo{
+    text-align: center;
+    color: #0066ff;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.4em;
+    font-size: 2.5em;
+    margin: 0 0 0 0;
+    animation: aparecer3 0.2s ease-out forwards;
+}
+.subtitulo{
+    text-align: center;
+    width: 80%;
+    font-size: 1.5em;
+    font-family: "Montserrat", sans-serif;
+    margin: 0 0 0 0;
+    animation: aparecer3 0.2s ease-out forwards;
+}
+.apartado_precios{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #ccf5ff;
+}
+@keyframes fadeIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.precios{
+    animation: fadeIn 0.6s ease-in-out;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border-radius: 1.2em;
+    margin:  1.5em 1.5em 1.5em 1.5em;
+    background: linear-gradient(90deg,rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+    
+}
+.tarjeta{
+    width: 100%;
+    height: 100%;
+}
+.p_apartado{
+    margin: 0;
+}
+.titulo_apartado{
+    display:flex 1;
+    justify-items: center;
+    text-align: center;
+    color: white;
+    border-radius: 1.2em;
+    background: linear-gradient(90deg,#0066ff, #50daff);
+}
+.p_titulo{
+    font-size: 2.8em;
+    font-family: "Bebas Neue", sans-serif;
+}
+.p_descripción{
+    font-family: "Montserrat", sans-serif;
+    padding: 1em 1.2em 0em 1.2em ;
+    font-size: 1.4em;
+    color: #002d70;
+}
+.p_Ajuste{
+    text-align: justify;
+}
+.varia_precio{
+    font-family: "Montserrat", sans-serif;
+    width: 70%;
+    font-size: 1.2em;
+}
+.precio_cursos{
+    padding: 0.4em;
+    border-radius: 1em;
+    font-size: 2em;
+    font-weight: bold;
+    width: 70%;
+    color: #0066ff;
+    background-color: rgb(255, 255, 255);
+}
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .nav_izq>a{
+    padding-left: 1em;
+    font-weight: 200;
+    font-size: 0.7em;
+    display: flex;
+    }
+    .p_descripción{
+    font-family: "Montserrat", sans-serif;
+    padding: 0.2;
+    font-size: 1em;
+    color: #002d70;
+    }
+    li::marker{
+        padding-left: 1em;
+    }
+  .apartado_precios {
+    display: flex;
+    overflow-x: auto;
+    gap: 6px;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    padding: 0;
+    margin: 0;
+  }
+  .precios {
+    flex: 0 0 90%;
+    min-width: 20px;
+    padding: 0;
+    background-color: #f3f3f3;
+    border-radius: 1em;
+    width: 80%; /* Distribuye equitativamente el espacio */
+    column-gap: 2em;
+    row-gap: 2em;
+  }
+    .titulo{
+    font-size: 2.8em;
+    letter-spacing: 0.2em;
+    }
+    .subtitulo{
+        padding: 1em 0em 0em 0em;
+    }
+    .precio_cursos{
+    font-size: 1.5em;
+    }
+    .varia_precio{
+        width: 90%;
+        font-size: 0.8em;
+        padding: 1em 0em 1em 0em;
+    }
+    /* Botones de desplazamiento fijos */
+.boton-scroll {
+    position: absolute;
+    top: 50%;
+    transform: translateY(590%);
+    z-index: 10;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #002d70;
+    color: white;
+    border: none;
+    border-radius: 50%;
+}
+
+#btn-izquierda {
+    left: 10px;
+}
+
+#btn-derecha {
+    right: 10px;
+}
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+}
+@media (min-width: 1025px) {
+    .boton-scroll {
+        display: none;
+    }
+}
+
+footer {
+    background-color: #eefaff;
+    color: #0066ff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-contenedor {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+.footer-logo > a{
+    display: flex;
+    text-decoration: none;
+}
+
+
+.footer-nav {
+    margin: 15px 0;
+}
+
+.footer-nav a {
+    color: #0066ff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.footer-nav a:hover {
+    color: #f0a500;
+}
+
+.footer-redes {
+    margin: 15px 0;
+}
+
+.footer-redes a {
+    margin: 0 10px;
+}
+
+.footer-redes img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-copy {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0.7;
+}
