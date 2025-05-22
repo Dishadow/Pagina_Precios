@@ -1,0 +1,144 @@
+/* animations.css */
+/* Animaciones avanzadas para elementos específicos */
+
+/* Animación de pulso */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Animación de onda */
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Animación de gradiente */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animación de flotación */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Efectos de animación para clases específicas */
+.luxury-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.luxury-pulse {
+  animation: pulse 4s ease infinite;
+}
+
+.luxury-wave {
+  animation: wave 8s ease infinite;
+}
+
+/* Fade-in sofisticado */
+.luxury-fade-in {
+  opacity: 0;
+  transform: translateY(30px) rotateX(10deg);
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.luxury-fade-in.animated {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+
+/* Efecto de hover 3D para tarjetas */
+.card-3d {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateY(5deg) rotateX(2deg) translateY(-10px);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de vidrio */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+
+.glass-effect:hover {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Efecto de texto dorado */
+.gold-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f9d423 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradientShift 3s linear infinite;
+}
+
+/* Efecto de borde animado */
+.animated-border {
+  position: relative;
+}
+
+.animated-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-gold);
+  transition: width 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.animated-border:hover::after {
+  width: 100%;
+}
+
+/* Placeholder en formularios */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  transition: opacity 0.3s ease;
+}
+
+.contact-form input:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+  opacity: 0.3;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+}
+
+/* Cursor personalizado */
+.custom-cursor {
+  mix-blend-mode: normal;
+  background: rgba(212, 175, 55, 0.7);
+}
+
+.custom-cursor.cursor-active {
+  background: rgba(212, 175, 55, 0.4);
+}

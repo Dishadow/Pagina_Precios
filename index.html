@@ -1,160 +1,390 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DISITE-XPERT | Desarrollo Web Premium</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
 </head>
-<body>  
-    <nav class="nav_barr">
+<body>
+    <!-- Cursor personalizado (se añade dinámicamente con JS) -->
+    
+    <nav class="nav_barr glass-effect">
         <div class="nav_izq">
-            <a href=""><h1 style="color: #0066ff;">DISITE</h1><H1 style="color:#002d70 ;">-XPERT</H1></a>
+            <a href="" class="hover-scale"><h1 style="color: #0066ff;">DISITE</h1><h1 style="color:#002d70;">-XPERT</h1></a>
         </div>
         <div class="nav_der">
-            <a href="">Holaaaaa</a>
-            <a href="">Inicio</a>
+            <a href="#inicio" class="animated-border">Inicio</a>
+            <a href="#servicios" class="animated-border">Servicios</a>
+            <a href="#nosotros" class="animated-border">Nosotros</a>
+            <a href="#portafolio" class="animated-border">Portafolio</a>
+            <a href="#contacto" class="animated-border">Contacto</a>
         </div>
+        <button class="mobile-menu-btn hover-scale">☰</button>
     </nav>
-    <div class="nav_blue"></div>
-    <div class="nav_bg"></div>
-    <section class="container">
-        <div class="titulo_subtitulo">
-            <h2 class="titulo">DESAROLLADORES DE PÁGINAS WEB</h2>
-            <p class="subtitulo">Llevar tu negocio o tu marca al siguiente nivel </p>
+    <section class="hero parallax" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in luxury-pulse">DESARROLLO WEB DE LUJO</h1>
+            <p class="hero-subtitle fade-in delay-1">Creamos experiencias digitales exclusivas que elevan tu marca</p>
+            <div class="hero-cta fade-in delay-2">
+                <a href="#contacto" class="cta-button glow-effect hover-scale">Solicitar cotización</a>
+                <a href="#portafolio" class="cta-button secondary hover-scale">Ver portafolio</a>
+            </div>
+        </div>
+        <div class="scroll-indicator luxury-float">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
-    <button id="btn-izquierda" class="boton-scroll">⬅</button>
-    <section class="apartado_precios">
-        <div class="precios">
-            <div class="tarjeta">
-                <div class="apartado">
-                    <div class="titulo_apartado">
-                        <p class="p_apartado p_titulo">TU PRIMERA PÁGINA</p>
-                        <div class="precio_cursos">
-                            <p class="p_apartado">$5,000 - $10,000 MXN</p>
-                        </div>
-                        <p class="varia_precio p_apartado" >El costo depende de: cantidad de secciones, diseños personalizados y funciones especiales</p>
+
+    <section class="services-section" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">NUESTROS SERVICIOS</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle fade-in delay-1">Soluciones digitales personalizadas para marcas exclusivas</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <div class="descripcion_tarjetas">
-                    <p class="p_descripción p_apartado">Crea una página que cuente quien eres, lo que haces y cómo pueden contactarte. Profesional, claro y hecha para impresionar.</p>
-                    <p class="p_descripción p_apartado">Ideal para profesionales independientes o pequeñas empresas que solo necesitan presencia en línea.</p>
-                    <p class="p_descripción p_apartado p_Ajuste">Excelente para:</p>
-                    <div>
-                        <ul class="p_descripción p_apartado p_Ajuste">
-                            <li>Portafolio personal</li>
-                            <li>Pagina de presentación de un negocio</li>
-                        </ul>
-                    </div>
-                    <hr>
-                    <p>Este servicio cuenta con: Ajustes responsivos, para una buena visualisación tanto en: Computadora, Tabletas y Celulares</p>
-                    <hr>
-                    <a href=""><p class="p_apartado p_titulo">Cotizar Ahora</p></a>
-                    </div>
+                    <h3>Desarrollo Web Premium</h3>
+                    <p>Sitios web a medida con diseño exclusivo y tecnología de vanguardia.</p>
+                    <a href="#" class="service-link">Saber más <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div>
+                
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Diseño Responsivo</h3>
+                    <p>Experiencias perfectas en todos los dispositivos y tamaños de pantalla.</p>
+                    <a href="#" class="service-link">Saber más <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Web con IA</h3>
+                    <p>Pagina web con IA para mas comodidad</p>
+                    <a href="#" class="service-link">Saber más <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
-    <div class="precios">
-            <div class="tarjeta">
-                <div class="apartado">
-                    <div class="titulo_apartado">
-                        <p class="p_apartado p_titulo">TU PRIMERA PÁGINA</p>
-                        <div class="precio_cursos">
-                            <p class="p_apartado">$5,000 - $10,000 MXN</p>
-                        </div>
-                        <p class="varia_precio p_apartado" >El costo depende de: cantidad de secciones, diseños personalizados y funciones especiales</p>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">PLANES PREMIUM</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle fade-in delay-1">Inversiones que generan resultados excepcionales</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <div class="pricing-header">
+                        <h3>Tu Primera Página</h3>
+                        <div class="price">$5,000 - $10,000 <span>MXN</span></div>
+                        <p>Ideal para profesionales independientes</p>
                     </div>
-                    <div class="descripcion_tarjetas">
-                    <p class="p_descripción p_apartado">Crea una página que cuente quien eres, lo que haces y cómo pueden contactarte. Profesional, claro y hecha para impresionar.</p>
-                    <p class="p_descripción p_apartado">Ideal para profesionales independientes o pequeñas empresas que solo necesitan presencia en línea.</p>
-                    <p class="p_descripción p_apartado p_Ajuste">Excelente para:
-                        <ul class="p_descripción p_apartado p_Ajuste">
-                            <li>Portafolio personal</li>
-                            <li>Pagina de presentación de un negocio</li>
-                        </ul>
-                    </p>
-                    <hr>
-                    <p>Este servicio cuenta con: Ajustes responsivos, para una buena visualisación tanto en: Computadora, Tabletas y Celulares</p>
-                    <hr>
-                    <a href=""><p class="p_apartado p_titulo">Cotizar Ahora</p></a>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Diseño personalizado</li>
+                        <li><i class="fas fa-check"></i> 3-5 secciones</li>
+                        <li><i class="fas fa-check"></i> Responsivo (móvil/tablet/PC)</li>
+                        <li><i class="fas fa-check"></i> Formulario de contacto</li>
+                        <li><i class="fas fa-check"></i> SEO básico</li>
+                        <li><i class="fas fa-check"></i> Portafolio personal</li>
+                        <li><i class="fas fa-check"></i> Presentación de negocio</li>
+                    </ul>
+                    <div class="price-note">
+                        <p>El costo varía según: cantidad de secciones, diseños personalizados y funciones especiales</p>
                     </div>
+                    <a href="#contacto" class="pricing-btn">Cotizar Ahora</a>
                 </div>
-                <div>
+                
+                <div class="pricing-card featured fade-in delay-1">
+                    <div class="pricing-header">
+                        <div class="popular-tag">POPULAR</div>
+                        <h3>Sitio Profesional</h3>
+                        <div class="price">$15,000 - $25,000 <span>MXN</span></div>
+                        <p>Perfecto para negocios establecidos</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Diseño premium</li>
+                        <li><i class="fas fa-check"></i> 6-8 secciones</li>
+                        <li><i class="fas fa-check"></i> Integración con redes</li>
+                        <li><i class="fas fa-check"></i> Galería multimedia</li>
+                        <li><i class="fas fa-check"></i> SEO avanzado</li>
+                        <li><i class="fas fa-check"></i> Blog integrado</li>
+                        <li><i class="fas fa-check"></i> Soporte prioritario</li>
+                    </ul>
+                    <div class="price-note">
+                        <p>Incluye funciones avanzadas y mayor personalización</p>
+                    </div>
+                    <a href="#contacto" class="pricing-btn">Cotizar Ahora</a>
+                </div>
+                
+                <div class="pricing-card fade-in delay-2">
+                    <div class="pricing-header">
+                        <h3>Solución Empresarial</h3>
+                        <div class="price">$35,000+ <span>MXN</span></div>
+                        <p>Para necesidades complejas</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Diseño exclusivo</li>
+                        <li><i class="fas fa-check"></i> Secciones ilimitadas</li>
+                        <li><i class="fas fa-check"></i> Sistema de reservas</li>
+                        <li><i class="fas fa-check"></i> Integración de pago</li>
+                        <li><i class="fas fa-check"></i> Panel administrativo</li>
+                        <li><i class="fas fa-check"></i> Desarrollo a medida</li>
+                        <li><i class="fas fa-check"></i> Soporte 24/7</li>
+                    </ul>
+                    <div class="price-note">
+                        <p>Solución completa para empresas con necesidades específicas</p>
+                    </div>
+                    <a href="#contacto" class="pricing-btn">Cotizar Ahora</a>
                 </div>
             </div>
         </div>
- <div class="precios">
-            <div class="tarjeta">
-                <div class="apartado">
-                    <div class="titulo_apartado">
-                        <p class="p_apartado p_titulo">TU PRIMERA PÁGINA</p>
-                        <div class="precio_cursos">
-                            <p class="p_apartado">$5,000 - $10,000 MXN</p>
-                        </div>
-                        <p class="varia_precio p_apartado" >El costo depende de: cantidad de secciones, diseños personalizados y funciones especiales</p>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">CLIENTES SATISFECHOS</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle fade-in delay-1">Lo que dicen nuestros clientes premium</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">"</div>
+                        <p>DISITE-XPERT transformó completamente nuestra presencia digital. El diseño exclusivo y la atención al detalle superaron todas nuestras expectativas.</p>
                     </div>
-                    <div class="descripcion_tarjetas">
-                    <p class="p_descripción p_apartado">Crea una página que cuente quien eres, lo que haces y cómo pueden contactarte. Profesional, claro y hecha para impresionar.</p>
-                    <p class="p_descripción p_apartado">Ideal para profesionales independientes o pequeñas empresas que solo necesitan presencia en línea.</p>
-                    <p class="p_descripción p_apartado p_Ajuste">Excelente para:</p>
-                        <ul class="p_descripción p_apartado p_Ajuste">
-                            <li>Portafolio personal</li>
-                            <li>Pagina de presentación de un negocio</li>
-                        </ul>
-                    <hr>
-                    <p>Este servicio cuenta con: Ajustes responsivos, para una buena visualisación tanto en: Computadora, Tabletas y Celulares</p>
-                    <hr>
-                    <a href=""><p class="p_apartado p_titulo">Cotizar Ahora</p></a>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-image: url('https://randomuser.me/api/portraits/women/45.jpg')"></div>
+                        <div class="author-info">
+                            <h4>María Rodríguez</h4>
+                            <p>CEO, Luxury Hotels</p>
+                        </div>
                     </div>
                 </div>
-                <div>
+                
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">"</div>
+                        <p>Increíble experiencia de principio a fin. Nuestra tienda online ha aumentado las ventas en un 200% desde el rediseño. ¡Altamente recomendados!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Carlos Méndez</h4>
+                            <p>Director, Golden Jewelry</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">"</div>
+                        <p>El equipo de DISITE-XPERT entendió perfectamente nuestra visión y la ejecutó con precisión. El resultado es simplemente espectacular.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Ana Sánchez</h4>
+                            <p>Directora de Marketing, Executive Consulting</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    <button id="btn-derecha" class="boton-scroll">➡</button>
     </section>
-    <section class="quienes_somos">
-        <h2>Quienes somos</h2>
+
+    <section class="about-section" id="nosotros">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">QUIÉNES SOMOS</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle fade-in delay-1">Expertos en creación de experiencias digitales exclusivas</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="fade-in">En <strong>DISITE-XPERT</strong>, fusionamos el diseño de lujo con tecnología de punta para crear sitios web que no solo impresionan, sino que también generan resultados.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature fade-in">
+                            <div class="feature-icon">✓</div>
+                            <h3>Diseño Exclusivo</h3>
+                            <p>Cada proyecto es único, creado para reflejar la esencia de tu marca.</p>
+                        </div>
+                        
+                        <div class="feature fade-in delay-1">
+                            <div class="feature-icon">✓</div>
+                            <h3>Tecnología Avanzada</h3>
+                            <p>Utilizamos las últimas tecnologías para garantizar rendimiento y seguridad.</p>
+                        </div>
+                        
+                        <div class="feature fade-in delay-2">
+                            <div class="feature-icon">✓</div>
+                            <h3>Enfoque Premium</h3>
+                            <p>Servicio personalizado y atención al detalle en cada etapa del proyecto.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image fade-in delay-1">
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- Empieza el footer ;3 -->
-    <div class="nav_blue"></div>
-    <div class="nav_bg"></div>
+    <section class="portfolio-section" id="portafolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">PORTAFOLIO</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle fade-in delay-1">Algunos de nuestros proyectos exclusivos</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');">
+                        <div class="portfolio-overlay">
+                            <h3>Pagina para Despacho</h3>
+                            <p>Diseño web para un despacho ejecutivo</p>
+                            <a href="/Paginas_Ejemplos/Despacho_1/index.html" class="portfolio-link">Ver proyecto</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in delay-1">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');">
+                        <div class="portfolio-overlay">
+                            <h3>ENARM</h3>
+                            <p>Web para curso de medicina</p>
+                            <a href="#" class="portfolio-link">Ver proyecto</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in delay-2">
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');">
+                        <div class="portfolio-overlay">
+                            <h3>Executive Consulting</h3>
+                            <p>Web corporativa para consultoría</p>
+                            <a href="#" class="portfolio-link">Ver proyecto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-cta fade-in delay-3">
+                <a href="#" class="cta-button">Ver todos los proyectos</a>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">CONTÁCTANOS</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle fade-in delay-1">Transformemos tu visión en una realidad digital</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item fade-in">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <h3>Correo Electrónico</h3>
+                        <a href="mailto:contacto@disitexpert.com">disitexpert@gmail.com</a>
+                    </div>
+                    
+                    <div class="info-item fade-in delay-1">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <h3>Teléfono</h3>
+                        <a href="tel:+525512345678">+52 55 2920 2116</a>
+                    </div>
+                    
+                    <div class="info-item fade-in delay-2">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Ubicación</h3>
+                        <p>Ciudad de México, México</p>
+                    </div>
+                    
+                    <div class="social-links fade-in delay-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form fade-in delay-1">
+                    <div class="form-group">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" name="telefono" placeholder="Teléfono">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="servicio" required>
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="desarrollo-web">Desarrollo Web Premium</option>
+                            <option value="diseno-responsivo">Diseño Responsivo</option>
+                            <option value="desarollo-web-con-IA">Desarollo web con IA</option>
+                            <option value="otro">Otro servicio</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button glow-effect">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="footer-contenedor">
-            <div class="footer-logo"><a href=""><h1 style="color: #0066ff;">DISITE</h1><H1 style="color:#002d70 ;">-XPERT</H1></a></div>
+            <div class="footer-logo fade-in"><a href=""><h1 style="color: #0066ff;">DISITE</h1><h1 style="color:#ffffff;">-XPERT</h1></a></div>
             <nav class="footer-nav">
-                <a href="#">Inicio</a>
-                <a href="#">Servicios</a>
-                <a href="#">Portafolio</a>
-                <a href="#">Contacto</a>
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#portafolio">Portafolio</a>
+                <a href="#contacto">Contacto</a>
             </nav>
-            <div class="footer-redes">
-                <a href="#"><img src="icon-facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="icon-twitter.svg" alt="Twitter"></a>
-                <a href="#"><img src="icon-instagram.svg" alt="Instagram"></a>
+            <div class="footer-copy">
+                <p>&copy; 2025 DISITE-XPERT - Todos los derechos reservados</p>
             </div>
-            <p class="footer-copy">&copy; 2025 Mi Sitio Web - Todos los derechos reservados</p>
         </div>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const scrollArea = document.querySelector(".apartado_precios");
-            scrollArea.scrollLeft = scrollArea.scrollWidth / (3); // Mueve el scroll al centro
-        });
-    </script>
-    <script>
-        const btnIzquierda = document.getElementById("btn-izquierda");
-        const btnDerecha = document.getElementById("btn-derecha");
-
-        btnIzquierda.addEventListener("click", () => {
-            scrollArea.scrollBy({ left: -700, behavior: "smooth" });
-        });
-
-        btnDerecha.addEventListener("click", () => {
-            scrollArea.scrollBy({ left: 300, behavior: "smooth" });
-        });
-    </script>
+    <div class="whatsapp-float">
+        <a href="https://wa.me/525529202116" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <script src="script-js.js"></script>
 </body>
 </html>
