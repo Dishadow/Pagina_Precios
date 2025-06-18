@@ -123,63 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const nombre = this.elements.nombre?.value.trim() || '';
-            const email = this.elements.email?.value.trim() || '';
-            const mensaje = this.elements.mensaje?.value.trim() || '';
-            
-            if (!nombre || !email || !mensaje) {
-                alert('Por favor complete todos los campos requeridos');
-                return;
-            }
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            if (!submitBtn) return;
-            
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-            
-            if (typeof firebase !== 'undefined' && firebase.firestore) {
-                const db = firebase.firestore();
-                db.collection("mensajes").add({
-                    nombre: this.nombre.value,
-                    email: this.email.value,
-                    telefono: this.telefono?.value || '',
-                    servicio: this.servicio?.value || '',
-                    mensaje: this.mensaje.value,
-                    fecha: firebase.firestore.FieldValue.serverTimestamp()
-                })
-                .then(() => {
-                    submitBtn.textContent = '¡Mensaje Enviado!';
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                        this.reset();
-                    }, 2000);
-                })
-                .catch((error) => {
-                    console.error("Error al enviar mensaje:", error);
-                    submitBtn.textContent = 'Error. Intente de nuevo';
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 2000);
-                });
-            } else {
-                setTimeout(() => {
-                    submitBtn.textContent = '¡Mensaje Enviado!';
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                        this.reset();
-                    }, 2000);
-                }, 1500);
-            }
-        });
+        contactForm.addEventListener('submit', function(e) {});
     }
         const parallaxSections = document.querySelectorAll('.parallax-section');
     window.addEventListener('scroll', () => {
